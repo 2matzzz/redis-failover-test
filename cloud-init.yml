@@ -1,0 +1,14 @@
+#cloud-config
+
+# Update and upgrade the system
+package_update: true
+package_upgrade: true
+
+# Install some packages
+packages:
+  - redis-server
+
+runcmd:
+  - sed -i 's/^bind 127\.0\.0\.1 -::1$/# bind 127.0.0.1 -::1/' /etc/redis/redis.conf
+  - sed -i 's/^protected-mode yes$/protected-mode no/' /etc/redis/redis.conf
+  - service redis-server restart
