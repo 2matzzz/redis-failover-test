@@ -19,7 +19,7 @@ Assuming you have [Multipass](https://multipass.run/) set up to test the program
 
 1. Launch Redis server with a new VM:
    ```console
-   $ multipass launch -n redis-server --disk 5G --memory 2G --cpus 5 --cloud-init cloud-init.yml
+   $ multipass launch -n redis-server --cloud-init cloud-init.yml
    ```
 2. Run the program:
    ```console
